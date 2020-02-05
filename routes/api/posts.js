@@ -64,6 +64,7 @@ router.get("/", auth, async (req, res) => {
 // @access  Private
 router.get("/:id", auth, async (req, res) => {
   try {
+    console.log("back end test")
     const post = await Post.findById(req.params.id);
 
     if (!post) {
