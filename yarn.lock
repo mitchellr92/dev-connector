@@ -540,12 +540,12 @@ execa@^1.0.0:
     strip-eof "^1.0.0"
 
 express-validator@^6.3.1:
-  version "6.3.1"
-  resolved "https://registry.yarnpkg.com/express-validator/-/express-validator-6.3.1.tgz#5ad6ca3ce6141f33638608d006d26c217500f375"
-  integrity sha512-YQHQKP/zlUTN6d38uWwXgK3At5phK6R24pOB/ImWisMUz/U/1AC3ZXMgiZYhtH4ViYJ6UAiV0/nj8s1Qs3kmvw==
+  version "6.4.0"
+  resolved "https://registry.yarnpkg.com/express-validator/-/express-validator-6.4.0.tgz#634f96b60d53112409e270c038ab818a36f56e47"
+  integrity sha512-Fs+x0yDOSiUV+o5jIRloMyBxqpSzJiMM8KQW1IRVv2l49F6ATU0F9uPa+3K6vXNlLlhUjauv2FCGLFPMaNr24w==
   dependencies:
     lodash "^4.17.15"
-    validator "^11.1.0"
+    validator "^12.1.0"
 
 express@^4.17.1:
   version "4.17.1"
@@ -1207,9 +1207,9 @@ mongoose-legacy-pluralize@1.0.2:
   integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
 
 mongoose@^5.8.10:
-  version "5.8.10"
-  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.8.10.tgz#c06c6a7e171c8b0706bf85da7f98e478fa6f9822"
-  integrity sha512-3sRiZhtMIB4egqxWbry23C+xX87kQ0aTvPtMXxWXCBGfCRkXMJl/CLiftYcle/JPy09Lv5u+ZCBpIJUgwDMtxw==
+  version "5.8.11"
+  resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.8.11.tgz#4b3813e55d33928dcc4a2c5cf4b8a76041192861"
+  integrity sha512-Yz0leNEJsAtNtMTxTDEadacLWt58gaVeBVL3c1Z3vaBoc159aJqlf+T8jaL9mAdBxKndF5YWhh6Q719xac7cjA==
   dependencies:
     bson "~1.1.1"
     kareem "2.3.1"
@@ -2018,10 +2018,10 @@ validate-npm-package-license@^3.0.1:
     spdx-correct "^3.0.0"
     spdx-expression-parse "^3.0.0"
 
-validator@^11.1.0:
-  version "11.1.0"
-  resolved "https://registry.yarnpkg.com/validator/-/validator-11.1.0.tgz#ac18cac42e0aa5902b603d7a5d9b7827e2346ac4"
-  integrity sha512-qiQ5ktdO7CD6C/5/mYV4jku/7qnqzjrxb3C/Q5wR3vGGinHTgJZN/TdFT3ZX4vXhX2R1PXx42fB1cn5W+uJ4lg==
+validator@^12.1.0:
+  version "12.2.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-12.2.0.tgz#660d47e96267033fd070096c3b1a6f2db4380a0a"
+  integrity sha512-jJfE/DW6tIK1Ek8nCfNFqt8Wb3nzMoAbocBF6/Icgg1ZFSBpObdnwVY2jQj6qUqzhx5jc71fpvBWyLGO7Xl+nQ==
 
 vary@~1.1.2:
   version "1.1.2"

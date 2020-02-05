@@ -1,5 +1,5 @@
 Arguments: 
-  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js client
+  C:\Program Files\nodejs\node.exe C:\Program Files (x86)\Yarn\bin\yarn.js version
 
 PATH: 
   C:\Users\mitch\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\local\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\usr\bin;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\Users\mitch\bin;C:\Python27;C:\Python27\Scripts;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0;C:\WINDOWS\System32\OpenSSH;C:\Program Files (x86)\Yarn\bin;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\nodejs;C:\ProgramData\chocolatey\bin;.;C:\sqlite3";C:\Users\mitch\AppData\Local\Programs\Python\Python37-32\Scripts;C:\Users\mitch\AppData\Local\Programs\Python\Python37-32;C:\Users\mitch\AppData\Local\Microsoft\WindowsApps;C:\Program Files\Microsoft VS Code\bin;C:\Program Files\Docker Toolbox;C:\Users\mitch\AppData\Local\Yarn\bin;C:\Program Files\heroku\bin;C:\Exercism;C:\Users\mitch\AppData\Roaming\npm;C:\Program Files\Git\usr\bin\vendor_perl;C:\Program Files\Git\usr\bin\core_perl
@@ -14,12 +14,17 @@ Platform:
   win32 x64
 
 Trace: 
-  SyntaxError: C:\Users\mitch\OtherProjects\devconnector\package.json: Unexpected token / in JSON at position 142
-      at JSON.parse (<anonymous>)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:1136:59
-      at Generator.next (<anonymous>)
-      at step (C:\Program Files (x86)\Yarn\lib\cli.js:98:30)
-      at C:\Program Files (x86)\Yarn\lib\cli.js:109:13
+  Error: canceled
+      at Interface.<anonymous> (C:\Program Files (x86)\Yarn\lib\cli.js:116426:13)
+      at Interface.emit (events.js:210:5)
+      at Interface._ttyWrite (readline.js:887:16)
+      at ReadStream.onkeypress (readline.js:191:10)
+      at ReadStream.emit (events.js:210:5)
+      at emitKeys (internal/readline/utils.js:433:14)
+      at emitKeys.next (<anonymous>)
+      at ReadStream.onData (readline.js:1153:36)
+      at ReadStream.emit (events.js:210:5)
+      at addChunk (_stream_readable.js:308:12)
 
 npm manifest: 
   {
@@ -28,10 +33,11 @@ npm manifest:
     "description": "social network for developers",
     "main": "server.js",
     "scripts": {
-      // "start": "node server",
+      "start": "node server",
       "server": "nodemon server",
-      "client": "yarn start --prefix client",
-      "dev": "concurrently \"yarn server\" \"yarn client\""
+      "client": "(cd ./client && yarn start)",
+      "dev": "concurrently \"yarn server\" \"yarn client\"",
+      "heroku-postbuild": "YARN_PRODUCTION=false cd client && yarn install && yarn run build"
     },
     "author": "<mitchellr92@live.com>",
     "license": "MIT",
@@ -42,11 +48,11 @@ npm manifest:
       "express-validator": "^6.3.1",
       "gravatar": "^1.8.0",
       "jsonwebtoken": "^8.5.1",
-      "mongoose": "^5.8.9",
+      "mongoose": "^5.8.10",
       "request": "^2.88.0"
     },
     "devDependencies": {
-      "concurrently": "^5.0.2",
+      "concurrently": "^5.1.0",
       "nodemon": "^2.0.2"
     }
   }
@@ -343,10 +349,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/concat-map/-/concat-map-0.0.1.tgz#d8a96bd77fd68df7793a73036a3ba0d5405d477b"
     integrity sha1-2Klr13/Wjfd5OnMDajug1UBdR3s=
   
-  concurrently@^5.0.2:
-    version "5.0.2"
-    resolved "https://registry.yarnpkg.com/concurrently/-/concurrently-5.0.2.tgz#4d2911018c0f15ddec34a8e668fc48dced7f3b1e"
-    integrity sha512-iUNVI6PzKO0RVXV9pHWM0khvEbELxf3XLIoChaV6hHyoIaJuxQWZiOwlNysnJX5khsfvIK66+OJqRdbYrdsR1g==
+  concurrently@^5.1.0:
+    version "5.1.0"
+    resolved "https://registry.yarnpkg.com/concurrently/-/concurrently-5.1.0.tgz#05523986ba7aaf4b58a49ddd658fab88fa783132"
+    integrity sha512-9ViZMu3OOCID3rBgU31mjBftro2chOop0G2u1olq1OuwRBVRw/GxHTg80TVJBUTJfoswMmEUeuOg1g1yu1X2dA==
     dependencies:
       chalk "^2.4.2"
       date-fns "^2.0.1"
@@ -597,12 +603,12 @@ Lockfile:
       strip-eof "^1.0.0"
   
   express-validator@^6.3.1:
-    version "6.3.1"
-    resolved "https://registry.yarnpkg.com/express-validator/-/express-validator-6.3.1.tgz#5ad6ca3ce6141f33638608d006d26c217500f375"
-    integrity sha512-YQHQKP/zlUTN6d38uWwXgK3At5phK6R24pOB/ImWisMUz/U/1AC3ZXMgiZYhtH4ViYJ6UAiV0/nj8s1Qs3kmvw==
+    version "6.4.0"
+    resolved "https://registry.yarnpkg.com/express-validator/-/express-validator-6.4.0.tgz#634f96b60d53112409e270c038ab818a36f56e47"
+    integrity sha512-Fs+x0yDOSiUV+o5jIRloMyBxqpSzJiMM8KQW1IRVv2l49F6ATU0F9uPa+3K6vXNlLlhUjauv2FCGLFPMaNr24w==
     dependencies:
       lodash "^4.17.15"
-      validator "^11.1.0"
+      validator "^12.1.0"
   
   express@^4.17.1:
     version "4.17.1"
@@ -1263,10 +1269,10 @@ Lockfile:
     resolved "https://registry.yarnpkg.com/mongoose-legacy-pluralize/-/mongoose-legacy-pluralize-1.0.2.tgz#3ba9f91fa507b5186d399fb40854bff18fb563e4"
     integrity sha512-Yo/7qQU4/EyIS8YDFSeenIvXxZN+ld7YdV9LqFVQJzTLye8unujAWPZ4NWKfFA+RNjh+wvTWKY9Z3E5XM6ZZiQ==
   
-  mongoose@^5.8.9:
-    version "5.8.9"
-    resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.8.9.tgz#616ae9df4cd7f41f7d2d77d037ad94784485bd74"
-    integrity sha512-gRazoLTQ0yuv4bk2z+nZEarKCyJ7WilFBkgrRqpOczUZUhk3i/FCe0rp8Mjc87dGXaHx54j8AjPJ0UKqJDXWMA==
+  mongoose@^5.8.10:
+    version "5.8.11"
+    resolved "https://registry.yarnpkg.com/mongoose/-/mongoose-5.8.11.tgz#4b3813e55d33928dcc4a2c5cf4b8a76041192861"
+    integrity sha512-Yz0leNEJsAtNtMTxTDEadacLWt58gaVeBVL3c1Z3vaBoc159aJqlf+T8jaL9mAdBxKndF5YWhh6Q719xac7cjA==
     dependencies:
       bson "~1.1.1"
       kareem "2.3.1"
@@ -2075,10 +2081,10 @@ Lockfile:
       spdx-correct "^3.0.0"
       spdx-expression-parse "^3.0.0"
   
-  validator@^11.1.0:
-    version "11.1.0"
-    resolved "https://registry.yarnpkg.com/validator/-/validator-11.1.0.tgz#ac18cac42e0aa5902b603d7a5d9b7827e2346ac4"
-    integrity sha512-qiQ5ktdO7CD6C/5/mYV4jku/7qnqzjrxb3C/Q5wR3vGGinHTgJZN/TdFT3ZX4vXhX2R1PXx42fB1cn5W+uJ4lg==
+  validator@^12.1.0:
+    version "12.2.0"
+    resolved "https://registry.yarnpkg.com/validator/-/validator-12.2.0.tgz#660d47e96267033fd070096c3b1a6f2db4380a0a"
+    integrity sha512-jJfE/DW6tIK1Ek8nCfNFqt8Wb3nzMoAbocBF6/Icgg1ZFSBpObdnwVY2jQj6qUqzhx5jc71fpvBWyLGO7Xl+nQ==
   
   vary@~1.1.2:
     version "1.1.2"
